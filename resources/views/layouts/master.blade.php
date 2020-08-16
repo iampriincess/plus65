@@ -7,10 +7,10 @@
 	<title>@yield('title')</title>
 
 	<!-- <link rel="stylesheet" href="/public/css/bootstrap.min.css"> -->
-	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
 	<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
 	<header id="main-header">
@@ -97,6 +97,6 @@
 	</footer>
 
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<script type="text/javascript" src="{{ asset('js/script.js') }}"></script>
+	<script type="text/javascript" src="/js/script.js"></script>
 </body>
 </html>
