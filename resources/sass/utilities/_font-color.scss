@@ -1,0 +1,21 @@
+$step: 0;
+
+@mixin font($color,$colors){
+  @for $i from $step through length($colors) - 1 {
+      $value: ($i + 1);
+      
+      .t-#{$color}-#{$value} { color : nth($colors,$value); }
+      .#{$color}-#{$value}-hover:hover { color : nth($colors,$value); }
+
+  }
+}
+
+.t-white { color: $white; }
+.white-hover:hover { color: $white; }
+
+@include font(black,$black_1 $black_2);
+@include font(green,$green_1);
+@include font(gray,$gray_1 $gray_2 $gray_3);
+@include font(yellow,$yellow_1 $yellow_2 $yellow_3);
+@include font(white,$white);
+

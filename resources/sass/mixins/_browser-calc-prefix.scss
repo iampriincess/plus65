@@ -1,0 +1,8 @@
+@mixin browserCalcPrefix( $property, $value, $value2 ){
+    $prefix: webkit moz ms o;
+    $valueAll: $value +  " - " + $value2;
+    @each $p in $prefix{
+      #{$property}: #{'-' + $p + '-calc(' + $valueAll + ')'}
+    }
+    #{$property}: #{'calc(' + $valueAll + ')'};
+}

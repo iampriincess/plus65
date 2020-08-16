@@ -1,0 +1,19 @@
+$step: 0;
+
+@mixin bg($color,$colors){
+  @for $i from $step through length($colors) - 1 {
+      $value: ($i + 1);
+      
+      .bg-#{$color}-#{$value} { background-color : nth($colors,$value); }
+  }
+}
+
+.bg-transparent   { background-color: transparent; }
+.bg-white { background-color: $white; }
+
+@include bg(black,$black_1 $black_2);
+@include bg(green,$green_1);
+@include bg(gray,$gray_1 $gray_2 $gray_3);
+@include bg(yellow,$gray_1 $gray_2 $gray_3);
+@include bg(white,$white);
+

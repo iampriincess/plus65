@@ -1,0 +1,55 @@
+@media (max-width: 767px) {
+	section {
+
+		&#services,
+		&#expertise {
+			padding: 100px 0;
+		}
+
+		&#services {
+			.col-sm-12 {
+				&:not(:last-child) { margin-bottom: 30px; }
+			}
+		}
+
+		&#expertise {
+			
+			.progress-wrapper {
+				margin-bottom: 60px;
+			}
+		}
+	}
+
+	footer {
+		.container {
+			padding: 70px 0;
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	section {
+		&#services {
+			.col-sm-12 {
+				display: block !important;
+				text-align: center;
+
+				.fas { margin-bottom: 30px; }
+			}
+		}
+	}
+
+	footer {
+		.nav-wrapper {
+			margin: 60px 0;
+
+			ul {
+				display: block !important;
+
+				li {
+					padding: 10px 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+@mixin color($hex,$opacity,$property,$prefix:null,$important:null){
+   @if ($prefix == null) {
+
+     #{$property}: rgba($hex,$opacity);
+
+   } @else {
+   	
+     $value : rgba($hex,$opacity);
+     
+     #{$prefix + '-' + $property}: $value $important;
+   }
+}

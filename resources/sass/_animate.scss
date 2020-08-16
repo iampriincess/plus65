@@ -1,0 +1,64 @@
+.mouse-icon .wheel{
+    @include browserPrefix(animation-name,  drop);
+    @include browserPrefix(animation-duration,  2s);
+    @include browserPrefix(animation-timing-function,  linear);
+    @include browserPrefix(animation-delay,  0s);
+    @include browserPrefix(animation-iteration-count, infinite);
+    @include browserPrefix(animation-play-state, running);
+}
+
+
+
+@keyframes drop	{
+	0%   { top:5px;  opacity: 0;}
+	30%  { top:10px; opacity: 1;}
+	100% { top:25px; opacity: 0;}
+}
+
+#expertiseBranding.animate {
+    width: 90%;
+    position: absolute;
+    background-color: $black_1;
+    z-index: 10;
+    @include browserPrefix(animation,  animate-branding 4s);
+} 
+
+@keyframes animate-branding {
+    from {
+    width: 100px;
+}
+to {
+    width: 90%}
+}
+
+#expertiseDesign.animate {
+    width: 80%;
+    position: absolute;
+    background-color: $black_1;
+    z-index: 10;
+    @include browserPrefix(animation,  animate-design 4s);
+} 
+
+@keyframes animate-design {
+    from {
+    width: 100px;
+}
+to {
+    width: 80%}
+}
+
+#expertiseDevelopment.animate {
+    width: 85%;
+    position: absolute;
+    background-color: $black_1;
+    z-index: 10;
+    @include browserPrefix(animation,  animate-development 4s);
+} 
+
+@keyframes animate-development {
+    from {
+    width: 130px;
+}
+to {
+    width: 85%}
+}

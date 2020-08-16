@@ -1,0 +1,363 @@
+header {
+	display: fixed;
+	background: $white;
+	padding: 20px 0;
+	
+	ul.nav {
+		li {
+			&:hover ~ .underline {
+				opacity: 1;
+				visibility: visible;
+			}
+			&:nth-child(1) {
+				&:hover ~ .underline { margin-left: 0; }
+			}
+			&:nth-child(2) {
+				&:hover ~ .underline { margin-left: 33.33%; }
+			}
+
+			&:nth-child(3) {
+				&:hover ~ .underline { margin-left: 66.66%; }
+			}
+
+			a { 
+				color: $black_1; 
+				&.active { color: $yellow_1; }
+			}
+		}
+	    
+	}
+	.underline {
+		background: $yellow_1;
+		height: 2px;
+		width: 27%;
+		margin: 0 0 0 -25%;
+		border: none;
+		opacity: 0;
+		visibility: hidden;
+		transition: .3s ease-in-out;
+	}
+
+	.menu-btn {
+		position: absolute;
+		right: 0;
+		z-index: 21;
+		.fas {
+			font-size: 30px;
+			color: $gray_2;
+
+			&.fa-times { 
+				display: none; 
+				font-size: 33px;
+				color: $white;
+			}
+		}
+	}
+
+	.menu {
+		position: fixed;
+		width: 100%;
+		top: -100%;
+	    left: 0;
+	    height: 100%;
+	    visibility: hidden;
+	    display: flex;
+	    pointer-events: none;
+	    align-items: center;
+	    justify-content: center; 
+	    z-index: 20;
+	    opacity: 0;
+	    transition: opacity 0.4s ease-in-out, top 0.4s ease-in-out;
+	    @include color($black_1,0.9,"background");
+
+	    .menu-nav {
+	    	li {
+	    		text-align: center;
+	    		margin-left: 50px;
+	    		opacity: 0;
+	    		transition: opacity 0.4s ease-in-out, margin 0.4s ease-in-out;
+	    		&:hover {
+	    			a { color: $yellow_1; }
+	    		}
+	    		a {
+	    			 font-size: 30px;
+	    			 color: $white;
+	    		}
+	    		&:nth-child(1) {
+	    			transition-delay: 0.5s;
+	    		}
+	    		&:nth-child(2) {
+					transition-delay: 0.8s;
+	    		}
+	    		&:nth-child(3) {
+					transition-delay: 1s;
+	    		}
+	    	}
+	    }
+	}
+	
+	&.show-mobile-nav {
+		.menu-btn {
+			.fas {
+				&.fa-bars { display: none; }
+				&.fa-times { display: inline-block; }
+			}
+		}
+		.menu {
+			visibility: visible;
+			pointer-events: auto;
+			opacity: 1;
+			top: 0;
+			li {
+				margin-left: 0;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+section {
+	.section-title {
+		position: relative;
+		margin-bottom: 80px;
+
+		&:before {
+			content: "";
+		    background: $yellow_1;
+		    position: absolute;
+		    width: 100px;
+		    height: 3px;
+		    bottom: -15px;
+		}
+	}
+	&#banner {
+		background: url("../img/banner.jpg") no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		height: calc( 100vh - 82px);
+		display: flex;
+		align-items: center;
+
+		.mouse-icon {
+			position: absolute;
+		    left: 50%;
+		    bottom: 40px;
+		    border: 2px solid $white;
+		    border-radius: 16px;
+		    height: 50px;
+		    width: 30px;
+		    margin-left: -15px;
+		    display: block;
+
+		    .wheel {
+		    	position: relative;
+			    border-radius: 10px;
+			    background: $white;
+			    width: 4px;
+			    height: 10px;
+			    top: 4px;
+			    margin-left: auto;
+			    margin-right: auto;
+		    }
+		}
+	}
+
+	&#bannerAbout,
+	&#bannerContact {
+		height: 60vh;
+		display: flex;
+		align-items: center;
+		position: relative;
+
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include color($black_1,0.5,"background");
+		}
+
+		.container { z-index: 1;  }
+	}
+
+	&#bannerAbout {
+		background: url("../img/banner-about.jpg") no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	&#bannerContact {
+		background: url("../img/banner-contact.jpg") no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	&#services {
+		padding: 200px 0;
+		background: $gray_1;
+		.description {
+			h4 {
+				letter-spacing: .15em;
+			}
+		}
+
+		.fas {
+			font-size: 50px;
+			color: $green_1;
+			margin-right: 20px;
+		}
+	}
+
+	&#expertise {
+		padding: 200px 0;
+
+		.progress-wrapper {
+			.expertise-box {
+				margin-bottom: 20px;
+				height: auto;
+			}
+			
+			.expertise-bar,
+			.expertisebar-bar {
+				height: 2px;
+			}
+
+			.expertise-bar {
+				position: relative;
+				display: block;
+				background-color: $gray_3;
+			}
+
+			.expertise-area {
+				z-index: 1;
+			    text-shadow: none;
+			    color: $black_1;
+			    font-size: 16px;
+			    margin-bottom: 10px;
+			}
+
+			.percent-text {
+				z-index: 3;
+			    position: absolute;
+			    text-shadow: none;
+			    color: $black_1;
+			    font-size: 16px;
+			    bottom: -23px;
+			    right: 0;
+			}
+		}
+	}
+
+	&#magic-section {
+		.animate__animated {
+			
+		}
+	}
+
+	&#about,
+	&#contact {
+		padding: 100px 0;
+	}
+
+	&#contact {
+		.section-title { margin-bottom: 60px; }
+	}
+}
+
+.logo {
+	width: 30px;
+    height: 30px;
+    border: 3px solid $green_1;
+    border-radius: 50%;
+}
+.animate__animated {
+	&.animate-up {
+		opacity: 0;
+	    @include browserPrefix(translate3d,  (0, 100%, 0));
+	}
+
+	&.animate-1 { animation-delay: .3s; }
+	&.animate-2 { animation-delay: .6s; }
+	&.animate-3 { animation-delay: .9s; }
+	&.animate-4 { animation-delay: 1.2s; }
+	&.animate-5 { animation-delay: 1.5s; }
+	
+	&.animate-left {
+		opacity: 0;
+	    @include browserPrefix(translate3d,  (-100%, 0, 0));
+	}
+
+	&.animate-right {
+		opacity: 0;
+	    @include browserPrefix(translate3d,  (100%, 0, 0));
+	}
+}
+
+footer {
+	background: $black_2;
+	
+	.container {
+		padding: 150px 0;
+	}
+
+	.logo {
+		position: relative;
+		&:before {
+			content: "";
+		    background: $yellow_1;
+		    position: absolute;
+		    width: 100px;
+		    height: 3px;
+		    bottom: -25px;
+		    left: -40px;
+		}
+	}
+
+	ul.nav {
+		li {
+			&:hover ~ .underline {
+				opacity: 1;
+			}
+			&:nth-child(1) {
+				&:hover ~ .underline { margin-left: 0; }
+			}
+			&:nth-child(2) {
+				&:hover ~ .underline { margin-left: 20%; }
+			}
+
+			&:nth-child(3) {
+				&:hover ~ .underline { margin-left: 40%; }
+			}
+			&:nth-child(4) {
+				&:hover ~ .underline { margin-left: 60%; }
+			}
+			&:nth-child(5) {
+				&:hover ~ .underline { margin-left: 80%; }
+			}
+
+
+			a { 
+				color: $white; 
+				font-size: 13px;
+			}
+		}
+	    
+	}
+	.underline {
+		background: $yellow_1;
+		height: 2px;
+		width: 20%;
+		margin-left: -10%;
+		border: none;
+		transition: .3s ease-in-out;
+		opacity: 0;
+	}
+
+	.copyright {
+		background: $black_1;
+		padding: 30px 0;
+	}
+}

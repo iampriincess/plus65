@@ -1,0 +1,130 @@
+/*Input*/
+/*----------------------------------------------------------------------------*/
+@mixin browserPlaceholder($property,$value,$element:null,$important:null) {
+  $suffix:  ':-webkit-input' ':-moz' '-ms-input' '-moz';
+
+  @each $p in $suffix {
+    #{$element}:#{$p}-placeholder{ #{$property} : #{$value} #{$important}}
+  }
+}
+
+@mixin defaultPlaceholder {
+   color: $black_2; 
+   font-weight: 300;
+   font-family: "Work Sans", sans-serif;
+}
+
+@mixin defaultInput {
+  background: $white;
+  border: 1px solid $gray_3;
+  display: block;
+  font-size: 16px;
+  font-weight: $regular;
+  height: 50px;
+  outline: none;
+  width: 100%;
+  padding: 0 15px;     
+}
+
+@mixin inputFocus {
+  border:  1px solid $yellow_1;
+  box-shadow: none;
+  outline: none;
+}
+
+@mixin inputError { border: 1px solid $red_1 !important; }
+
+@mixin inputDisabled {
+  background-color: transparent !important;
+  border-color: #eceef3 !important;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+/*Placeholder*/
+::-webkit-input-placeholder { @include defaultPlaceholder; }
+         ::-moz-placeholder { @include defaultPlaceholder; } /* firefox 19+ */
+     :-ms-input-placeholder { @include defaultPlaceholder; } /* ie */ 
+          :-moz-placeholder { @include defaultPlaceholder; }
+          
+@include browserPlaceholder(font-weight, 600,'.bold-placeholder');
+@include browserPlaceholder(color, white,'input.white-placeholder',!important);   
+
+input {
+  /*clears the autofill icon from Safari*/
+  &:focus::-webkit-textfield-decoration-container { visibility: hidden; }
+  
+  &.has-success {
+    &[type="text"], 
+    &[type="password"],
+    &[type="email"], 
+    &[type="date"],
+    &[type="number"],
+    &[type="url"] { border-color: $green_2; }
+  }
+  
+  &.error {
+    &[type="text"], 
+    &[type="password"],
+    &[type="email"], 
+    &[type="date"],
+    &[type="number"],
+    &[type="url"] { 
+      @include inputError;
+      
+      &:active,
+      &:focus { @include inputFocus; }
+    }
+  }
+  
+  &[type="text"], 
+  &[type="password"],
+  &[type="email"], 
+  &[type="date"],
+  &[type="number"], 
+  &[type="url"],
+  &[tel-input] {
+    @include defaultPlaceholder; 
+    @include defaultInput; 
+    @extend %extend_transition-linear;
+
+    &:focus { @include inputFocus; }
+    &:hover { border: 1px solid $yellow_1; }
+    
+    &.input-error {
+      @include inputError;
+      
+      &:active,
+      &:focus { @include inputError; }
+    }
+    
+    &:disabled {
+        @include inputDisabled;
+    }
+  }
+  
+  &[type="number"] {
+    -moz-appearance: textfield !important;
+    
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {    
+        margin: 0;
+        -webkit-appearance: none;
+    }
+  }
+}
+
+textarea {
+  @include defaultInput;
+  min-height: 140px;  
+  resize: none;
+  padding: 10px 15px;
+  
+  &.has-success { border-color: #62be5c; }
+  &.error { border-color: $red_1; }
+  
+  &:focus { @include inputFocus; }
+  
+  &.input-error { @include inputError; }
+}
+
