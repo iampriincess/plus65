@@ -27,7 +27,7 @@
 }
 
 @mixin inputFocus {
-  border:  1px solid $yellow_1;
+  border:  1px solid $yellow_1 !important;
   box-shadow: none;
   outline: none;
 }

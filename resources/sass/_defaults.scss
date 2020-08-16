@@ -143,3 +143,7 @@ input {
         ~ .error-message { display: inline-block; }
     }
 }
+
+textarea {
+    box-shadow: none !important;
+}

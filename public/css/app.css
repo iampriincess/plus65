@@ -212,7 +212,7 @@ input.error[type=text], input.error[type=password], input.error[type=email], inp
   border: 1px solid #E25757 !important;
 }
 input.error[type=text]:active, input.error[type=text]:focus, input.error[type=password]:active, input.error[type=password]:focus, input.error[type=email]:active, input.error[type=email]:focus, input.error[type=date]:active, input.error[type=date]:focus, input.error[type=number]:active, input.error[type=number]:focus, input.error[type=url]:active, input.error[type=url]:focus {
-  border: 1px solid #FEDE84;
+  border: 1px solid #FEDE84 !important;
   box-shadow: none;
   outline: none;
 }
@@ -231,7 +231,7 @@ input[type=text], input[type=password], input[type=email], input[type=date], inp
   padding: 0 15px;
 }
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus, input[type=date]:focus, input[type=number]:focus, input[type=url]:focus, input[tel-input]:focus {
-  border: 1px solid #FEDE84;
+  border: 1px solid #FEDE84 !important;
   box-shadow: none;
   outline: none;
 }
@@ -279,7 +279,7 @@ textarea.error {
   border-color: #E25757;
 }
 textarea:focus {
-  border: 1px solid #FEDE84;
+  border: 1px solid #FEDE84 !important;
   box-shadow: none;
   outline: none;
 }
@@ -480,6 +480,10 @@ img {
 
 input.error ~ .error-message {
   display: inline-block;
+}
+
+textarea {
+  box-shadow: none !important;
 }
 
 header {
