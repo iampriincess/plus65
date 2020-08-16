@@ -83,7 +83,7 @@
 			<div class="col-md-6 col-sm-12 pl-0">
 				<div class="container">
 					<div class="row m-0">
-						<div class="col-lg-9 col-sm-12 pt-3 pb-3">
+						<div class="col-lg-9 col-sm-12 pt-3 pb-3 pt-sm-5 pb-sm-5">
 							<h2 class="section-title animate-up animate__animated animate-1">Let's make magic.</h2>
 							<p class="animate-up animate__animated animate-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum voluptatem nesciunt ipsum praesentium sunt, repellat deserunt unde fuga reprehenderit, numquam suscipit in, error ipsa explicabo, aspernatur quo ipsum rem aperiam. Facere nulla fugit suscipit voluptatem repellendus a ut voluptatibus eaque aspernatur sunt consequatur cupiditate animi aut, molestias ea totam ullam harum eos! Error iste harum animi maxime rem?</p>
 							<p class="animate__animated animate-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae rem sit quas ipsam accusamus nam natus unde numquam assumenda? impedit nemo consequuntur odio qui maiores? Ad commodi provident obcaecati quos architecto nulla voluptas qui dolor, ullam vel maxime quidem sapiente nesciunt eaque soluta aliquam quod, sunt quis adipisci consectetur reprehenderit sint mollitia. Cum sint quaerat temporibus? Cupiditate in quisquam culpa porro laborum laudantium ex fugiat expedita veniam incidunt. Vero omnis necessitatibus, facere sequi id numquam rerum veritatis?</p>
