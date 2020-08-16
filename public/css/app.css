@@ -519,6 +519,7 @@ header .underline {
 header .menu-btn {
   position: absolute;
   right: 0;
+  padding-right: 15px;
   z-index: 21;
 }
 header .menu-btn .fas {
